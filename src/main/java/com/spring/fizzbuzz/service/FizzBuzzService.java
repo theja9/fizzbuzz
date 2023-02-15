@@ -21,6 +21,9 @@ public class FizzBuzzService {
         if (num % 3 == 0 && num % 7 == 0) {
             return "fizz pop";
         }
+        if (num % 5 == 0 && num % 7 == 0) {
+            return "buzz pop";
+        }
         if (num % 7 == 0) {
             return "pop";
         }
