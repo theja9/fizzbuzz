@@ -19,4 +19,19 @@ public class FizzBuzzServiceTest {
         String actualResult = service.plainFizzBuzz(1);
         assertEquals("1", actualResult);
     }
+
+    //feature-1: PlainFizzBuzz
+    @Test
+    public void testFizz(){
+        FizzBuzzService service = new FizzBuzzService();
+        String actualResult = service.plainFizzBuzz(3);
+        assertEquals("fizz", actualResult);
+    }
+
+    @Test
+    public void testFizzDivisibleBy3(){
+        FizzBuzzService service = new FizzBuzzService();
+        String actualResult = service.plainFizzBuzz(9);
+        assertEquals("fizz", actualResult);
+    }
 }
