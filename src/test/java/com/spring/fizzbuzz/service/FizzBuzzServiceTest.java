@@ -34,4 +34,11 @@ public class FizzBuzzServiceTest {
         String actualResult = service.plainFizzBuzz(9);
         assertEquals("fizz", actualResult);
     }
+
+    @Test
+    public void testBuzzDivisibleBy5(){
+        FizzBuzzService service = new FizzBuzzService();
+        String actualResult = service.plainFizzBuzz(5);
+        assertEquals("buzz", actualResult);
+    }
 }
