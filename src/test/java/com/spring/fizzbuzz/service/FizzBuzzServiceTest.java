@@ -48,4 +48,12 @@ public class FizzBuzzServiceTest {
         String actualResult = service.plainFizzBuzz(15);
         assertEquals("fizz buzz", actualResult);
     }
+
+    //fizzBuzzPop
+    @Test
+    public void testPop(){
+        FizzBuzzService service = new FizzBuzzService();
+        String actualResult = service.fizzBuzzPop(28);
+        assertEquals("pop", actualResult);
+    }
 }

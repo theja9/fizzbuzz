@@ -17,4 +17,11 @@ public class FizzBuzzService {
         return String.valueOf(num);
     }
 
+    public String fizzBuzzPop(int num) {
+        if (num % 7 == 0) {
+            return "pop";
+        }
+        return String.valueOf(num);
+    }
+
 }

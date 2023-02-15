@@ -16,6 +16,10 @@ public class fizzBuzzController {
 
     @GetMapping("/{variation}/{num}")
     public String getSubstitution(@PathVariable String variation, @PathVariable int num) {
-        return fizzBuzzService.plainFizzBuzz(num);
+        if(variation.equals("plainFizzBuzz"))
+            return fizzBuzzService.plainFizzBuzz(num);
+        if(variation.equals("fizzBuzzPop"))
+            return fizzBuzzService.fizzBuzzPop(num);
+        return "Entered variation is invalid";
     }
 }
