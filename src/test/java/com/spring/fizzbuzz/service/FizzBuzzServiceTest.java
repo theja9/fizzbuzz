@@ -71,4 +71,11 @@ public class FizzBuzzServiceTest {
         assertEquals("buzz pop", actualResult);
     }
 
+    @Test
+    public void testFizzBuzzPop(){
+        FizzBuzzService service = new FizzBuzzService();
+        String actualResult = service.fizzBuzzPop(210);
+        assertEquals("fizz buzz pop", actualResult);
+    }
+
 }
