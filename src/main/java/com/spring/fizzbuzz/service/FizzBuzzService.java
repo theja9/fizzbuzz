@@ -5,6 +5,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class FizzBuzzService {
     public String plainFizzBuzz(int num) {
+        if (num % 3 == 0 && num % 5 == 0) {
+            return "fizz buzz";
+        }
         if (num % 3 == 0) {
             return "fizz";
         }
