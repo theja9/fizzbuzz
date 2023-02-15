@@ -1,5 +1,6 @@
 package com.spring.fizzbuzz.service;
 
+import com.spring.fizzbuzz.model.FizzBuzzRequest;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -32,5 +33,19 @@ public class FizzBuzzService {
         }
         return String.valueOf(num);
     }
+
+    public String customFizzBuzz(FizzBuzzRequest request, int num) {
+        if (num % request.getNum1() == 0 && num % request.getNum2() == 0) {
+            return request.getKeyword1() + " "+ request.getKeyword2();
+        }
+        if (num % request.getNum1() == 0) {
+            return request.getKeyword1();
+        }
+        if (num % request.getNum2() == 0) {
+            return request.getKeyword2();
+        }
+        return String.valueOf(num);
+    }
+
 
 }

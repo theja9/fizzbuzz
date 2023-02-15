@@ -1,5 +1,6 @@
 package com.spring.fizzbuzz.service;
 
+import com.spring.fizzbuzz.model.FizzBuzzRequest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -77,5 +78,32 @@ public class FizzBuzzServiceTest {
         String actualResult = service.fizzBuzzPop(210);
         assertEquals("fizz buzz pop", actualResult);
     }
+
+    //feature3: customFizzBuzz
+    public void testFuzz(){
+        FizzBuzzService service = new FizzBuzzService();
+        String actualResult = service.customFizzBuzz(request(),4);
+        assertEquals("fuzz", actualResult);
+    }
+
+    @Test
+    public void testBizz(){
+        FizzBuzzService service = new FizzBuzzService();
+        String actualResult = service.customFizzBuzz(request(),9);
+        assertEquals("bizz", actualResult);
+    }
+
+    @Test
+    public void testFuzzBizz(){
+        FizzBuzzService service = new FizzBuzzService();
+        String actualResult = service.customFizzBuzz(request(),12);
+        assertEquals("fuzz bizz", actualResult);
+    }
+
+    public FizzBuzzRequest request(){
+        return new FizzBuzzRequest(2,3,"fuzz","bizz");
+    }
+
+
 
 }
