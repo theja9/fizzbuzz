@@ -1,5 +1,6 @@
 package com.spring.fizzbuzz.controller;
 
+import com.spring.fizzbuzz.exception.InvalidDataException;
 import com.spring.fizzbuzz.model.FizzBuzzRequest;
 import com.spring.fizzbuzz.service.FizzBuzzService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,19 +15,19 @@ public class fizzBuzzController {
     FizzBuzzService fizzBuzzService;
 
     @GetMapping("/{variation}/{num}")
-    public String getSubstitution(@PathVariable String variation, @PathVariable int num) {
+    public String getSubstitution(@PathVariable String variation, @PathVariable int num) throws InvalidDataException {
         if (variation.equals("plainFizzBuzz"))
             return fizzBuzzService.plainFizzBuzz(num);
         if (variation.equals("fizzBuzzPop"))
             return fizzBuzzService.fizzBuzzPop(num);
-        return "Entered variation is invalid";
+        throw new InvalidDataException("Entered variation is not valid");
     }
 
     @PostMapping("/{variation}/{num}")
-    public String getCustomSubstitution(@RequestBody FizzBuzzRequest request, @PathVariable String variation, @PathVariable int num) {
+    public String getCustomSubstitution(@RequestBody FizzBuzzRequest request, @PathVariable String variation, @PathVariable int num) throws InvalidDataException {
         if (variation.equals("customFizzBuzz"))
             return fizzBuzzService.customFizzBuzz(request, num);
-        return "Entered variation is not valid";
+        throw new InvalidDataException("Entered variation is not valid");
     }
 
 }
