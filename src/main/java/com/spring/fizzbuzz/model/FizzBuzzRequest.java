@@ -1,10 +1,18 @@
 package com.spring.fizzbuzz.model;
 
+import org.hibernate.validator.constraints.Range;
+
+import javax.validation.constraints.NotNull;
+
 public class FizzBuzzRequest {
 
+    @Range(min = 1)
     private int num1;
+    @Range(min = 1)
     private int num2;
+    @NotNull
     private String keyword1;
+    @NotNull
     private String keyword2;
 
     public FizzBuzzRequest(int num1, int num2, String keyword1, String keyword2) {
