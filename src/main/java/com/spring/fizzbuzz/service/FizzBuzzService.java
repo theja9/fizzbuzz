@@ -18,6 +18,9 @@ public class FizzBuzzService {
     }
 
     public String fizzBuzzPop(int num) {
+        if (num % 3 == 0 && num % 7 == 0) {
+            return "fizz pop";
+        }
         if (num % 7 == 0) {
             return "pop";
         }
